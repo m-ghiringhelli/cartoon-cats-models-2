@@ -20,6 +20,7 @@ describe('cats routes', () => {
 
   it('/cats/:id should return cat detail', async () => {
     const res = await request(app).get('/cats/1');
+    console.log('res.body', res.body);
     const felix = {
       id: '1',
       name: 'Felix',
@@ -27,7 +28,7 @@ describe('cats routes', () => {
       url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Felix_the_cat.svg/200px-Felix_the_cat.svg.png',
       year: 1892,
       lives: 3,
-      isSidekick: false,
+      is_sidekick: false,
     };
     expect(res.body).toEqual(felix);
   });
